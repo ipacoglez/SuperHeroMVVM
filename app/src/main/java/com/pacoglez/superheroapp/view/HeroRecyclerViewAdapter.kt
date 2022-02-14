@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.pacoglez.superheroapp.databinding.LayoutHeroItemBinding
 import com.pacoglez.superheroapp.model.HeroModel
 
-class HeroRecyclerViewAdapter : RecyclerView.Adapter<ItemViewHolder>() {
+class HeroRecyclerViewAdapter(private val itemClickListener: ClickListener) : RecyclerView.Adapter<ItemViewHolder>() {
 
     var heroes = emptyList<HeroModel>()
 
@@ -26,6 +26,7 @@ class HeroRecyclerViewAdapter : RecyclerView.Adapter<ItemViewHolder>() {
         val hero = heroes[position]
 
         holder.bind(hero)
+        holder.itemView.setOnClickListener{itemClickListener.itemSelect(heroes[position])}
     }
 
     override fun getItemCount(): Int {

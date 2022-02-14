@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pacoglez.superheroapp.databinding.FragmentHeroListBinding
+import com.pacoglez.superheroapp.model.HeroModel
 import com.pacoglez.superheroapp.viewmodel.HeroViewModel
 
-class HeroListFragment : Fragment() {
+class HeroListFragment : Fragment(), ClickListener {
 
     private lateinit var binding: FragmentHeroListBinding
     lateinit var viewModel: HeroViewModel
@@ -34,11 +35,11 @@ class HeroListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = HeroRecyclerViewAdapter()
+        adapter = HeroRecyclerViewAdapter(this)
         binding.recyclerViewList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.recyclerViewList.adapter = adapter
 
-        binding.recyclerViewList.adapter = HeroRecyclerViewAdapter().apply {
+        binding.recyclerViewList.adapter = HeroRecyclerViewAdapter(this).apply {
             viewModel.heroes.observe(viewLifecycleOwner){
                 this.heroes = it
             }
@@ -49,4 +50,18 @@ class HeroListFragment : Fragment() {
         }
     }
 
+    override fun itemSelect(data: HeroModel){
+        viewModel.setItemSelection(data)
+
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(android.R.id.content, HeroDetailsFragment.newInstance())
+            ?.addToBackStack(null)
+            ?.commit()
+    }
+
+}
+
+interface ClickListener {
+    fun itemSelect(data: HeroModel)
 }

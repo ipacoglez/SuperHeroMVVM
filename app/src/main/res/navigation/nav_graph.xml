@@ -9,5 +9,14 @@
         android:id="@+id/heroListFragment"
         android:name="com.pacoglez.superheroapp.view.HeroListFragment"
         android:label="fragment_hero_list"
-        tools:layout="@layout/fragment_hero_list" />
+        tools:layout="@layout/fragment_hero_list" >
+        <action
+            android:id="@+id/action_heroListFragment_to_heroDetailsFragment3"
+            app:destination="@id/heroDetailsFragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/heroDetailsFragment3"
+        android:name="com.pacoglez.superheroapp.view.HeroDetailsFragment"
+        android:label="HeroDetailsFragment" />
 </navigation>

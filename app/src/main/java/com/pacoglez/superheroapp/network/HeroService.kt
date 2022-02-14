@@ -15,4 +15,5 @@ private const val BASE_URL = "https://akabab.github.io/superhero-api/api/"
 interface HeroServices {
     @GET("all.json")
     suspend fun getAllHeroes(): List<HeroModel>
+
 }

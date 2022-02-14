@@ -2,4 +2,12 @@
     <string name="app_name">SuperHeroApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="content_description_image">Imagen</string>
+    <string name="label_intelligence">Inteligencia</string>
+    <string name="label_strength">Fuerza</string>
+    <string name="label_speed">Velocidad</string>
+    <string name="label_durability">Durabilidad</string>
+    <string name="label_power">Poder</string>
+    <string name="label_combat">Combate</string>
+    <string name="label_powers_subtitle">Poderes</string>
+    <string name="label_biography">Biografia</string>
 </resources>

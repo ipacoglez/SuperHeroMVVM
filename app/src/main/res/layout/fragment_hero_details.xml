@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="view.HeroDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/image_view_picture"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:contentDescription="@string/content_description_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/text_view_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_picture" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_name">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_powers_subtitle"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circularProgressIndicatorIntelligence"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:progress="100"
+                        app:indicatorSize="50dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:trackThickness="5dp" />
+
+                    <TextView
+                        android:id="@+id/textViewIntelligence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="@+id/circularProgressIndicatorIntelligence"
+                        app:layout_constraintStart_toStartOf="@+id/circularProgressIndicatorIntelligence"
+                        app:layout_constraintTop_toBottomOf="@+id/circularProgressIndicatorIntelligence" />
+
+                    <TextView
+                        android:id="@+id/textViewLabelIntelligence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_intelligence"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewIntelligence"
+                        app:layout_constraintStart_toStartOf="@+id/textViewIntelligence"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewIntelligence" />
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circularProgressIndicatorStrength"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="8dp"
+                        android:progress="100"
+                        app:indicatorSize="50dp"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:trackThickness="5dp" />
+
+                    <TextView
+                        android:id="@+id/textViewStrength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="@+id/circularProgressIndicatorStrength"
+                        app:layout_constraintStart_toStartOf="@+id/circularProgressIndicatorStrength"
+                        app:layout_constraintTop_toBottomOf="@+id/circularProgressIndicatorStrength" />
+
+                    <TextView
+                        android:id="@+id/textViewLabelStrength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_strength"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewStrength"
+                        app:layout_constraintStart_toStartOf="@+id/textViewStrength"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewStrength" />
+
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circularProgressIndicatorSpeed"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:progress="100"
+                        app:indicatorSize="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.577"
+                        app:layout_constraintStart_toEndOf="@+id/circularProgressIndicatorStrength"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:trackThickness="5dp" />
+
+                    <TextView
+                        android:id="@+id/textViewSpeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="@+id/circularProgressIndicatorSpeed"
+                        app:layout_constraintStart_toStartOf="@+id/circularProgressIndicatorSpeed"
+                        app:layout_constraintTop_toBottomOf="@+id/circularProgressIndicatorSpeed" />
+
+                    <TextView
+                        android:id="@+id/textViewLabelSpeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_speed"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewSpeed"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSpeed"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSpeed" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewBiography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/label_biography"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <TextView
+                android:id="@+id/textViewFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewBiography"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBiography" />
+
+            <TextView
+                android:id="@+id/textViewAliases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewFullName"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFullName" />
+
+            <TextView
+                android:id="@+id/textViewPublisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewAliases"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAliases" />
+
+            <TextView
+                android:id="@+id/textViewOccupation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewPublisher"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPublisher" />
+
+            <TextView
+                android:id="@+id/textViewGroupAffiliation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewOccupation"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOccupation" />
+
+            <TextView
+                android:id="@+id/textViewGroupGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewGroupAffiliation"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGroupAffiliation" />
+
+            <TextView
+                android:id="@+id/textViewGroupRace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textViewGroupGender"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGroupGender" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
